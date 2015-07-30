@@ -13,7 +13,9 @@ set shiftwidth=3
 set autoindent
 set tw=79
 set formatoptions+=tc
-autocmd FileType tex, txt setlocal formatoptions+=a
+autocmd FileType tex setlocal formatoptions+=a
+autocmd FileType txt setlocal formatoptions+=a
+autocmd FileType plaintex setlocal formatoptions+=a
 "set smartindent
 filetype plugin indent on
 let g:omni_sql_no_default_maps = 1
