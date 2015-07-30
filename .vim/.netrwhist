@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/srv/store/csanchez/tab/simplescalar/sslittle-na-sstrix/bin'
+let g:netrw_dirhist_2='/srv/store/csanchez/tab/mibench/simfiles'
+let g:netrw_dirhist_3='/srv/store/csanchez/tab/run_parallel'
+let g:netrw_dirhist_4='/srv/store/csanchez/tab/mibench/config'
+let g:netrw_dirhist_5='/srv/store/csanchez/tab/simplescalar/src/simplesim-3.0/target-alpha'
+let g:netrw_dirhist_6='/var/lib/mysql'
+let g:netrw_dirhist_7='/etc/skel'
+let g:netrw_dirhist_8='/home/csanchez/smilebasicsource/libraries'
+let g:netrw_dirhist_9='/home/csanchez/smilebasicsource/query'
