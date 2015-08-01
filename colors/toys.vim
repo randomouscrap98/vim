@@ -97,6 +97,9 @@ hi def link jsFuncBraces   Delimiter
 hi def link jsBrackets     Operator
 hi def link jsFuncCall     Function
 
+"--C/C++--
+hi def link cBlock         Delimiter
+
 " Unsorted stuff (eventually should be removed)
 "hi SpecialComment guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=25 ctermbg=NONE cterm=NONE
 "hi Folded guifg=#192224 guibg=#A1A6A8 guisp=#A1A6A8 gui=italic ctermfg=235 ctermbg=248 cterm=NONE
