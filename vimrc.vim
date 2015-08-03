@@ -1,23 +1,34 @@
+"Tabbing should be spaces (since most people want it like that I guess).
+"However, they should NOT be spaces for file types that need tabs
 set expandtab
+set tabstop=3
+set shiftwidth=3
 autocmd FileType make setlocal noexpandtab
 autocmd FileType lex setlocal noexpandtab
-"autocmd FileType c,cpp,cs,java set cindent
 
+"Indenting schemes
+set autoindent
+filetype plugin indent on
+
+"Some filetypes are actually other types, but aren't recognized as such
 au BufNewFile,BufRead *.cu set ft=c
 au BufNewFile,BufRead *.make set ft=make
 
+"This is some old stuff yo. I'm probably not even using it anymore
 set wildmode=longest,list,full
 set wildmenu
-set tabstop=3
-set shiftwidth=3
-set autoindent
-set tw=79
-set formatoptions+=tc
-autocmd FileType tex setlocal formatoptions+=a
-autocmd FileType txt setlocal formatoptions+=a
-autocmd FileType plaintex setlocal formatoptions+=a
-"set smartindent
-filetype plugin indent on
+
+"Automatic text indenting. It's MAGIC!
+let g:mytw = 79
+let &tw=g:mytw
+autocmd BufNewFile,BufRead * setlocal formatoptions+=tcq
+autocmd BufNewFile,BufRead * setlocal formatoptions-=o
+autocmd FileType tex,txt,plaintex setlocal formatoptions+=an
+"autocmd FileType txt setlocal formatoptions+=an
+"autocmd FileType plaintex setlocal formatoptions+=an
+map <F2> :set tw=0<CR>:echo "Automatic indenting turned off"<cr>
+map <F4> :let &tw=g:mytw<CR>:echo "Automatic indenting turned on"<cr>
+
 let g:omni_sql_no_default_maps = 1
 set number
 "set mouse=a
