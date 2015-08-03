@@ -35,17 +35,19 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=o
 autocmd FileType tex,txt,plaintex setlocal formatoptions+=an
 
 "Function for toggling automatic indenting
-function! ToggleAutomaticIndenting()
+function! ToggleAutomaticLineBreak()
    if &tw == 0
       let &tw=g:mytw
-      echo "Automatic indenting turned on. Width: " . g:mytw
+      set formatoptions+=t
+      echo "Automatic linebreak turned on. Width: " . g:mytw
    else
       set tw=0
-      echo "Automatic indenting turned off."
+      set formatoptions-=t
+      echo "Automatic linebreak turned off."
    endif
 endfunction
 
-map <F4> :call ToggleAutomaticIndenting()<CR>
+map <F4> :call ToggleAutomaticLineBreak()<CR>
 
 "Some snazzy (get it?) key rewmappings
 nmap n nzz
@@ -59,6 +61,7 @@ set hidden           "This lets airline tabs be kept in the background
 set noshowmode       "This removes the bottom text; makes airline look better.
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
+let g:airline_section_b = '%{ShouldAutomaticLineBreak()}'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_extensions = ['tabline']
@@ -76,6 +79,15 @@ set laststatus=2
 "let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
 "let g:airline_right_sep = '◀'
+
+"Function for airline / automatic line break integration
+function! ShouldAutomaticLineBreak()
+   if &tw == 0
+      return ''
+   else
+      return '*'
+   endif
+endfunction
 
 "Extra key mappings for extra functionality. Some are for airline, some are for
 "syntastic (which may not work on many systems), but some are just for funsies.
