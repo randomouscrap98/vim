@@ -10,6 +10,12 @@ autocmd FileType lex setlocal noexpandtab
 set autoindent
 filetype plugin indent on
 
+"We all need a happy text editor
+set number
+"set mouse=a         "Uncomment this if you want mouse support
+syntax on
+colorscheme toys
+
 "Some filetypes are actually other types, but aren't recognized as such
 au BufNewFile,BufRead *.cu set ft=c
 au BufNewFile,BufRead *.make set ft=make
@@ -18,28 +24,39 @@ au BufNewFile,BufRead *.make set ft=make
 set wildmode=longest,list,full
 set wildmenu
 
+"This fixes some garbage automatic sql stuff
+let g:omni_sql_no_default_maps = 1
+
 "Automatic text indenting. It's MAGIC!
-let g:mytw = 79
+let g:mytw = 79      "Set your desired text width here
 let &tw=g:mytw
 autocmd BufNewFile,BufRead * setlocal formatoptions+=tcq
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o
 autocmd FileType tex,txt,plaintex setlocal formatoptions+=an
-"autocmd FileType txt setlocal formatoptions+=an
-"autocmd FileType plaintex setlocal formatoptions+=an
-map <F2> :set tw=0<CR>:echo "Automatic indenting turned off"<cr>
-map <F4> :let &tw=g:mytw<CR>:echo "Automatic indenting turned on"<cr>
 
-let g:omni_sql_no_default_maps = 1
-set number
-"set mouse=a
+"Function for toggling automatic indenting
+function! ToggleAutomaticIndenting()
+   if &tw == 0
+      let &tw=g:mytw
+      echo "Automatic indenting turned on. Width: " . g:mytw
+   else
+      set tw=0
+      echo "Automatic indenting turned off."
+   endif
+endfunction
+
+map <F4> :call ToggleAutomaticIndenting()<CR>
+
+"Some snazzy (get it?) key rewmappings
 nmap n nzz
 nmap N Nzz
 map Q gq
 noremap gQ Q
 
-map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-syntax on
-
+"Airline options. The 'laststatus' bit is an airline bug or something that required
+"fixing. I don't know if it affects anything else.
+set hidden           "This lets airline tabs be kept in the background
+set noshowmode       "This removes the bottom text; makes airline look better.
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:airline#extensions#tabline#enabled = 1
@@ -51,18 +68,21 @@ let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = '|'
 let g:syntastic_always_populate_loc_list = 1
 set laststatus=2
-
-set hidden
 "if !exists('g:airline_symbols')
 "   let g:airline_symbols = {}
 "endif
-"
 "" unicode symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
 "let g:airline_right_sep = '◀'
-"
+
+"Extra key mappings for extra functionality. Some are for airline, some are for
+"syntastic (which may not work on many systems), but some are just for funsies.
+map <F3> :echo 'hi<' . synIDattr(synID(line("."),col("."),1),"name") . 
+   \ '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . 
+   \ '> lo<' . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . 
+   \ '>'<CR>
 nmap <F9> :enew<cr>
 nmap <F6> :bnext<CR>
 nmap <F5> :bprevious<CR>
@@ -71,10 +91,9 @@ nmap <F12> :TagbarToggle<CR>
 nmap <F8> :SyntasticCheck<CR>
 nmap + :lnext<CR>
 nmap - :lprev<CR>
-"colorscheme gruvbox
-"set bg=dark
-colorscheme toys
 
+"A function to hide the statusbar. But it's pretty useless, because it also
+"hides the airline bar. Yuck.
 let s:hidden_all = 0
 function! ToggleHiddenAll()
    if s:hidden_all  == 0
@@ -92,32 +111,12 @@ function! ToggleHiddenAll()
    endif
 endfunction
 
-"call ToggleHiddenAll()
-set noshowmode
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
-"colorscheme railscasts
-"colorscheme molokai
 
-"let g:jellybeans_use_lowcolor_black = 0
-"colorscheme jellybeans
 
-"if &diff
-"   " diff mode
-"   set diffopt+=iwhite
-"endif
-
-"set diffexpr=DiffW()
-"function DiffW()
-"   let opt = ""
-"   if &diffopt =~ "icase"
-"      let opt = opt . "-i"
-"   endif
-"   if &diffopt =~ "iwhite"
-"      let opt = opt . "-w" " vim uses -b by default
-"   endif
-"   silent execute "!diff -a --binary " . opt .
-"      \ v:fname_in . " " . v:fname_new . " > " . v:fname_out
-"endfunction
+"*****************************************************************
+"* The rest is just old tab completion stuff I don't use anymore *
+"*****************************************************************
 
 "function InsertTabWrapper()
 "   let col = col('.') - 1
