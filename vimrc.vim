@@ -20,6 +20,8 @@ colorscheme toys
 au BufNewFile,BufRead *.cu set ft=c
 au BufNewFile,BufRead *.make set ft=make
 au BufNewFile,BufRead *.mustache set ft=html
+au BufNewFile,BufRead *nginx*.conf set ft=nginx
+au BufNewFile,BufRead *.nginx set ft=nginx
 
 "This is some old stuff yo. I'm probably not even using it anymore
 set wildmode=longest,list,full
