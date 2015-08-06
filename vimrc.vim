@@ -19,6 +19,7 @@ colorscheme toys
 "Some filetypes are actually other types, but aren't recognized as such
 au BufNewFile,BufRead *.cu set ft=c
 au BufNewFile,BufRead *.make set ft=make
+au BufNewFile,BufRead *.mustache set ft=html
 
 "This is some old stuff yo. I'm probably not even using it anymore
 set wildmode=longest,list,full
