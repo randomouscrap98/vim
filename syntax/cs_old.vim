@@ -14,17 +14,6 @@ endif
 let s:cs_cpo_save = &cpo
 set cpo&vim
 
-syn match csOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
-syn match csOperator	"<<\|>>\|&&\|||\|++\|--\|->"
-syn match csOperator	"[.!~*&%<>^|=,+-]"
-syn match csOperator	"/[^/*=]"me=e-1
-syn match csOperator	"/$"
-syn match csOperator "&&\|||"
-syn match csOperator	"[][]"
-
-syn match csDelimiter    "[();\\]"
-syn match csBraces display "[{}]"
-
 " type
 syn keyword csType			bool byte char decimal double float int long object sbyte short string uint ulong ushort void var dynamic
 " storage
@@ -146,9 +135,6 @@ syn match   csNumber		"\<\d\+\([eE][-+]\=\d\+\)\=[fFdD]\>"
 
 " The default highlighting.
 hi def link csType			Type
-hi def link csOperator     Operator
-hi def link csDelimiter    Delimiter
-hi def link csBraces       Delimiter
 hi def link csTypeDecleration		StorageClass
 hi def link csInterfaceDecleration      StorageClass
 hi def link csNewDecleration            StorageClass
