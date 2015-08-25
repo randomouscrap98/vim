@@ -36,6 +36,7 @@ let &tw=g:mytw
 autocmd BufNewFile,BufRead * setlocal formatoptions+=tcq
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o
 autocmd FileType tex,txt,plaintex setlocal formatoptions+=an
+autocmd FileType js,html setlocal formatoptions+=tcq
 
 "Function for toggling automatic indenting
 function! ToggleAutomaticLineBreak()

@@ -21,6 +21,7 @@ syn match csOperator	"/[^/*=]"me=e-1
 syn match csOperator	"/$"
 syn match csOperator "&&\|||"
 syn match csOperator	"[][]"
+syn match csOperator "=>"
 
 syn match csDelimiter    "[();\\]"
 syn match csBraces display "[{}]"
@@ -76,7 +77,7 @@ syn keyword csNewDecleration            new nextgroup=csClass skipwhite
 syn match csClass contained       /\<[A-Z][a-z]\w\+/ nextgroup=csGeneric
 syn match csIface contained       /\<I[A-Z][a-z]\w\+/ nextgroup=csGeneric
 " syn region csGeneric start="<" end=">" contains=csIface,csClass
-syn region csEnclosed start="(" end=")" contains=csConstant,csType,csString, csVerbatimString, csCharacter, csNumber,csIface,csClass
+" syn region csEnclosed start="(" end=")" contains=csConstant,csType,csString, csVerbatimString, csCharacter, csNumber,csIface,csClass,csOperator
 "syn region csInherits start=":" end="{" contains=csIface,csClass
 
 " Attributes
@@ -148,6 +149,7 @@ syn match   csNumber		"\<\d\+\([eE][-+]\=\d\+\)\=[fFdD]\>"
 hi def link csType			Type
 hi def link csOperator     Operator
 hi def link csDelimiter    Delimiter
+hi def link csEnclosed     Delimiter
 hi def link csBraces       Delimiter
 hi def link csTypeDecleration		StorageClass
 hi def link csInterfaceDecleration      StorageClass
