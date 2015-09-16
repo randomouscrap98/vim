@@ -78,6 +78,10 @@ hi DiffText ctermbg=88
 hi DiffAdd ctermbg=235
 hi DiffDelete ctermbg=23
 
+" Autocomplete menu
+hi Pmenu ctermbg=233 ctermfg=244
+hi PmenuSel ctermbg=238 ctermfg=250
+
 "--shell--
 hi def link shOperator     String
 hi def link shRange        Function

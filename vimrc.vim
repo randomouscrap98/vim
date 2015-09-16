@@ -74,6 +74,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = '|'
 let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 set laststatus=2
 "if !exists('g:airline_symbols')
 "   let g:airline_symbols = {}
@@ -128,7 +129,6 @@ function! ToggleHiddenAll()
 endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
-
 
 "*****************************************************************
 "* The rest is just old tab completion stuff I don't use anymore *
