@@ -42,9 +42,11 @@ hi! link PreProc        Number
 " String colors
 hi String guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
 hi! link PreCondit      String
+hi! link Quote          String
 
 " Delimeter colors
 hi Delimiter guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=29 ctermbg=NONE cterm=NONE
+hi! link Delimeter      Delimiter 
 
 " Comment colors
 hi Comment guifg=#005f87 guibg=NONE guisp=NONE gui=italic ctermfg=24 ctermbg=NONE cterm=NONE
@@ -100,6 +102,7 @@ hi def link jsBraces       Delimiter
 hi def link jsFuncBraces   Delimiter 
 hi def link jsBrackets     Operator
 hi def link jsFuncCall     Function
+hi def link jsonKeywordMatch     Function
 
 "--C/C++--
 hi def link cBlock         Delimiter

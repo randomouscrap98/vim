@@ -108,6 +108,7 @@ nmap <F12> :TagbarToggle<CR>
 nmap <F8> :SyntasticCheck<CR>
 nmap + :lnext<CR>
 nmap - :lprev<CR>
+map <S-BS> <Nop>
 
 "A function to hide the statusbar. But it's pretty useless, because it also
 "hides the airline bar. Yuck.
