@@ -104,6 +104,9 @@ hi def link jsBrackets     Operator
 hi def link jsFuncCall     Function
 hi def link jsonKeywordMatch     Function
 
+"--perl--
+hi def link perlBraces     Delimiter
+
 "--C/C++--
 hi def link cBlock         Delimiter
 
