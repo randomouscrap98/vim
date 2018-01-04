@@ -14,7 +14,7 @@ filetype plugin indent on
 set number
 "set mouse=a         "Uncomment this if you want mouse support
 syntax on
-colorscheme toys
+colorscheme calm
 
 "Some filetypes are actually other types, but aren't recognized as such
 au BufNewFile,BufRead *.cu set ft=c
