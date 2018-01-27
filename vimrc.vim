@@ -131,6 +131,8 @@ endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
+let python_highlight_all = 1
+
 "*****************************************************************
 "* The rest is just old tab completion stuff I don't use anymore *
 "*****************************************************************
