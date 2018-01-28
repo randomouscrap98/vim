@@ -94,6 +94,7 @@ function! ShouldAutomaticLineBreak()
    endif
 endfunction
 
+set pastetoggle=<F2>
 "Extra key mappings for extra functionality. Some are for airline, some are for
 "syntastic (which may not work on many systems), but some are just for funsies.
 map <F3> :echo 'hi<' . synIDattr(synID(line("."),col("."),1),"name") . 

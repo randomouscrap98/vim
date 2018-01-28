@@ -565,6 +565,7 @@ if version >= 508 || !exists("did_python_syn_inits")
   "NOTE: My added stuff
   syn match pythonDelimiter      "[(),\\]"
   syn match pythonDelimiter      ":"
+  syn match pythonBracket        "[{}]"
   syn match pythonOperator       "\(<<\|>>\|[-+*/%&^|<>!=]\)="
   syn match pythonOperator       "<<\|>>\|&&\|||\|++\|--\|->"
   syn match pythonOperator       "[.!~*&%<>^|=,+-]"
@@ -576,6 +577,9 @@ if version >= 508 || !exists("did_python_syn_inits")
   "HiLink pythonBrace            Delimiter
   HiLink pythonDelimiter        Delimiter
   HiLink pythonOperator         Operator 
+  HiLink pythonBracket          Delimiter
+  hi! def link pythonDottedName Function
+  hi! def link pythonDecorator  Type 
 
   delcommand HiLink
 endif
