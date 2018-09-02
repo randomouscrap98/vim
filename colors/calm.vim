@@ -9,7 +9,7 @@ if version > 580
 endif
 
 set t_Co=256
-let g:colors_name = "toys"
+let g:colors_name = "calm"
 
 " Function colors (purple)
 hi Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=104 ctermbg=NONE cterm=bold
