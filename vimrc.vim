@@ -73,7 +73,9 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = '|'
+
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_flake8_args='--ignore=E501'
 "let g:syntastic_auto_loc_list = 1
 set laststatus=2
 "if !exists('g:airline_symbols')
@@ -94,7 +96,7 @@ function! ShouldAutomaticLineBreak()
    endif
 endfunction
 
-set pastetoggle=<f2>
+set pastetoggle=<F2>
 "Extra key mappings for extra functionality. Some are for airline, some are for
 "syntastic (which may not work on many systems), but some are just for funsies.
 map <F3> :echo 'hi<' . synIDattr(synID(line("."),col("."),1),"name") . 
