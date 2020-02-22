@@ -22,6 +22,7 @@ au BufNewFile,BufRead *.make set ft=make
 au BufNewFile,BufRead *.mustache set ft=html
 au BufNewFile,BufRead *nginx*.conf set ft=nginx
 au BufNewFile,BufRead *.nginx set ft=nginx
+au BufNewFile,BufRead *.ts set ft=javascript
 
 "This is some old stuff yo. I'm probably not even using it anymore
 set wildmode=longest,list,full
@@ -76,6 +77,8 @@ let g:airline#extensions#tabline#right_alt_sep = '|'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_flake8_args='--ignore=E501'
+let g:pymode_lint_checkers = ['pep8']
+let g:pymode_python = 'python3'
 "let g:syntastic_auto_loc_list = 1
 set laststatus=2
 "if !exists('g:airline_symbols')

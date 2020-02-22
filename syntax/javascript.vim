@@ -225,6 +225,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
 
 	HiLink javaScriptString                 String
 	HiLink javaScriptRegexpString           String
+	HiLink javaScriptTemplateString         String
 
 	HiLink javaScriptNumber                 Number
 	HiLink javaScriptFloat                  Number
