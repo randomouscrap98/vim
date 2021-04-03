@@ -12,6 +12,7 @@ filetype plugin indent on
 
 "We all need a happy text editor
 set number
+set visualbell
 "set mouse=a         "Uncomment this if you want mouse support
 syntax on
 colorscheme calm
@@ -23,6 +24,7 @@ au BufNewFile,BufRead *.mustache set ft=html
 au BufNewFile,BufRead *nginx*.conf set ft=nginx
 au BufNewFile,BufRead *.nginx set ft=nginx
 au BufNewFile,BufRead *.ts set ft=javascript
+au BufNewFile,BufRead *.tsx set ft=javascript
 
 "This is some old stuff yo. I'm probably not even using it anymore
 set wildmode=longest,list,full
