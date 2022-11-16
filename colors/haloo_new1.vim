@@ -42,7 +42,8 @@ hi! link Include        Number
 hi! link PreProc        Number
 
 " String colors (red)
-hi String ctermfg=204 ctermbg=NONE cterm=NONE
+hi String ctermfg=168 ctermbg=NONE cterm=NONE
+" hi String ctermfg=204 ctermbg=NONE cterm=NONE
 hi! link PreCondit      String
 hi! link Quote          String
 
@@ -51,10 +52,12 @@ hi Delimiter ctermfg=36 ctermbg=NONE cterm=NONE
 hi! link Delimeter      Delimiter 
 
 " Comment colors (whatever)
-hi Comment ctermfg=60 ctermbg=NONE cterm=NONE
+hi Comment ctermfg=31 ctermbg=236 cterm=NONE
+" hi Comment ctermfg=60 ctermbg=NONE cterm=NONE
 
 " Label colors (orange)
-hi Label ctermfg=173 ctermbg=NONE cterm=bold
+hi Label ctermfg=174 ctermbg=NONE cterm=bold
+" hi Label ctermfg=173 ctermbg=NONE cterm=bold
 hi! link Character      Label
 
 " Special colors (like function but slightly off? Still purple)
@@ -73,7 +76,7 @@ hi! link SpellCap       Todo
 hi LineNr ctermfg=237 ctermbg=NONE cterm=bold
 " Orange
 hi MatchParen ctermfg=166 ctermbg=NONE cterm=bold 
-hi Normal ctermfg=251 ctermbg=234 cterm=NONE
+hi Normal ctermfg=250 ctermbg=235 cterm=NONE
 hi! link Title          Normal
 hi SignColumn ctermfg=237 ctermbg=52
 
