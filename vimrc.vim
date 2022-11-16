@@ -15,7 +15,7 @@ set number
 set visualbell
 "set mouse=a         "Uncomment this if you want mouse support
 syntax on
-colorscheme calm
+colorscheme vimbrant
 
 "Some filetypes are actually other types, but aren't recognized as such
 au BufNewFile,BufRead *.cu set ft=c
@@ -25,7 +25,6 @@ au BufNewFile,BufRead *nginx*.conf set ft=nginx
 au BufNewFile,BufRead *.nginx set ft=nginx
 au BufNewFile,BufRead *.ts set ft=javascript
 au BufNewFile,BufRead *.tsx set ft=javascript
-au BufNewFile,BufRead *.rs set ft=rust
 au BufNewFile,BufRead *.toml set ft=toml
 
 "This is some old stuff yo. I'm probably not even using it anymore

@@ -1,113 +1,91 @@
-" Vim color file - pastel
-" Created by CJ - 2015
-set background=dark
-if version > 580
-	hi clear
-	if exists("syntax_on")
-		syntax reset
-	endif
+"
+" Vim colour file
+"
+" Maintainer:  Ruslan Chikirin <ruslanch@gmail.com>
+" Last Change: 26 May 2011
+" Version:     1.0
+"
+" This colour file is meant for GUI use.
+"
+
+set background=light
+hi clear
+if exists("syntax_on")
+    syntax reset
+endif
+let g:colors_name="calm"
+
+
+hi Normal        guifg=#000000  guibg=#ededed
+hi Title         guifg=#000000  guibg=#ededed
+hi Cursor        guibg=slategray
+hi LineNr        guifg=#aaaaaa  guibg=#f5f5f5
+hi Visual        guibg=#bbddff
+hi NonText       guifg=#cccccc  guibg=#f5f5f5
+hi StatusLine   guifg=#ffffff   guibg=#404040   gui=none
+hi StatusLineNC guifg=#f0f0f0   guibg=#646464   gui=none
+hi VertSplit    guifg=#f0f0f0   guibg=#646464   gui=none
+hi ModeMsg       guifg=#007050  guibg=#eeeeee  gui=none
+hi ErrorMsg      guifg=#f03050  guibg=#eeeeee  gui=none
+hi Error         guifg=#bb3355  guibg=white    gui=none
+
+
+" Vim 7.x specific
+if version >= 700
+  hi CursorLine  guibg=#eeeeee  gui=none
+  hi MatchParen  guibg=#ccffdd  gui=none
+  hi Pmenu       guifg=#60656f  guibg=#f0f5ff  gui=none
+  hi PmenuSel    guifg=white    guibg=#3585ef  gui=bold
+  hi PmenuSbar   guifg=#d0d5dd  guibg=#e0e5ee  gui=bold
+  hi PmenuThumb  guifg=#e0e5ee  guibg=#c0c5dd  gui=bold
+  hi Search      guibg=#fcfcaa  gui=none
+  hi IncSearch   guibg=#ffff33  gui=bold
 endif
 
-set t_Co=256
-let g:colors_name = "calm"
 
-" Function colors (purple)
-hi Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=104 ctermbg=NONE cterm=bold
-hi! link Define         Function
-hi! link cDefine        Function
-hi! link TypeDef        Function
-hi! link StorageClass   Function
-hi! link Directory      Function
-hi! link Structure      Function
+" Syntax highlighting 
+hi Comment       guifg=#668866         gui=none
+hi Todo          guifg=#446644  guibg=#ddeecc  gui=italic
+hi Operator      guifg=darkslateblue   gui=none
+hi Identifier    guifg=saddlebrown     gui=none
+hi Function      guifg=saddlebrown     gui=none
+hi Statement     guifg=darkviolet      gui=none
+hi Type          guifg=#0050b0         gui=none
+hi Constant      guifg=mediumblue      gui=none
+hi Conditional   guifg=darkviolet      gui=none
+hi Delimiter     guifg=#101010         gui=none
+hi PreProc       guifg=#008080         gui=none
+hi Special       guifg=#a05050         gui=italic
+hi Keyword       guifg=#007050         gui=none
+hi String        guifg=darkred         gui=none
+hi Number        guifg=darkgreen       gui=none
+hi Float         guifg=darkgreen       gui=italic
+hi Include       guifg=#007070         gui=none
+hi PreCondit     guifg=#646400         gui=none
+hi Label         guifg=saddlebrown     gui=none
+hi Structure     guifg=darkblue        gui=none
+hi Macro         guifg=#005050          gui=none
+hi Exception     guifg=mediumvioletred gui=none
+hi Character     guifg=darkred         gui=none
 
-" Keyword colors (yellow)
-hi Keyword guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=179 ctermbg=NONE cterm=bold
-hi! link Conditional    Keyword
-hi! link Statement      Keyword
-hi! link Operator       Keyword
-
-" Type colors (blue)
-hi Type guifg=#008787 guibg=NONE guisp=NONE gui=bold ctermfg=38 ctermbg=NONE cterm=bold
-hi! link Identifier     Type
-hi! link MakeTarget     Type
-
-" Number colors (green)
-hi Number guifg=#5f8700 guibg=NONE guisp=NONE gui=NONE ctermfg=71 ctermbg=NONE cterm=NONE
-hi Float guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=74 ctermbg=NONE cterm=NONE
-hi! link Boolean        Number
-hi! link Constant       Number
-hi! link Include        Number
-hi! link PreProc        Number
-
-" String colors (red)
-hi String guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=167 ctermbg=NONE cterm=NONE
-hi! link PreCondit      String
-hi! link Quote          String
-
-" Delimeter colors (like type but slightly off? Still blue)
-hi Delimiter guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=36 ctermbg=NONE cterm=NONE
-hi! link Delimeter      Delimiter 
-
-" Comment colors (whatever)
-hi Comment guifg=#005f87 guibg=NONE guisp=NONE gui=italic ctermfg=60 ctermbg=NONE cterm=NONE
-
-" Label colors (orange)
-hi Label guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=173 ctermbg=NONE cterm=bold
-hi! link Character      Label
-
-" Special colors (like function but slightly off? Still purple)
-hi Special guifg=#F9F9FF guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=104 ctermbg=NONE cterm=bold
-
-" Error or Unknown colors
-hi Error guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
-hi! link cFormat        Error
-hi! link SpellBad       Error
-
-" Important colors
-hi Todo guifg=#F9F9FF guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=189 ctermbg=124 cterm=NONE
-hi! link SpellCap       Todo
-
-" UI colors
-hi LineNr guifg=#d7af00 guibg=NONE guisp=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=bold
-" Orange
-hi MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=166 ctermbg=NONE cterm=bold 
-hi Normal guifg=#d0d0d0 guibg=#192224 guisp=#192224 gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
-hi! link Title          Normal
-hi SignColumn ctermfg=237 ctermbg=52
-
-" Diff appendages 
-hi DiffChange ctermbg=52
-hi DiffText ctermbg=88
-hi DiffAdd ctermbg=235
-hi DiffDelete ctermbg=23
-
-" Autocomplete menu
-hi Pmenu ctermbg=233 ctermfg=244
-hi PmenuSel ctermbg=238 ctermfg=250
-
-"--shell--
-hi def link shOperator     String
-hi def link shRange        Function
-hi def link shRedir        Function
-hi def link shDerefVar     Identifier
-
-"--php--
-hi def link phpParent      Delimiter
-hi def link phpVarSelector Type
-hi def link phpFunction    Function
-
-"--javascript--
-hi def link jsParens       Delimiter 
-hi def link jsFuncParens   Delimiter 
-hi def link jsBraces       Delimiter
-hi def link jsFuncBraces   Delimiter 
-hi def link jsBrackets     Operator
-hi def link jsFuncCall     Function
-hi def link jsonKeywordMatch     Function
-
-"--perl--
-hi def link perlBraces     Delimiter
-
-"--C/C++--
-hi def link cBlock         Delimiter
+hi link Function        Normal
+"hi link Character       Constant
+"hi link String          Constant
+hi link Boolean         Constant
+"hi link Number          Constant
+"hi link Float           Number
+hi link Repeat          Conditional
+"hi link Label           Statement
+"hi link Exception       Statement
+"hi link Include         PreProc
+hi link Define          PreProc
+"hi link Macro           PreProc
+"hi link PreCondit       PreProc
+hi link StorageClass    Type
+"hi link Structure       Type
+hi link Typedef         Type
+hi link Tag             Special
+hi link SpecialChar     Special
+hi link SpecialComment  Special
+hi link Debug           Special
 

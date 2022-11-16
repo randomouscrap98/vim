@@ -1,113 +1,105 @@
-" Vim color file - pastel
-" Created by CJ - 2015
+" ======================================================================
+" Pastel
+" ======================================================================
+" A Sublime Text 2 / Textmate theme.
+" Copyright (c) 2014 Dayle Rees.
+" Released under the MIT License <http://opensource.org/licenses/MIT>
+" ======================================================================
+" Find more themes at : https://github.com/daylerees/colour-schemes
+" ======================================================================
+
 set background=dark
-if version > 580
-	hi clear
-	if exists("syntax_on")
-		syntax reset
-	endif
-endif
+hi clear
+syntax reset
 
-set t_Co=256
-let g:colors_name = "pastel"
+" Colors for the User Interface.
 
-" Function colors (purple)
-hi Function guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=81 ctermbg=NONE cterm=bold
-hi! link Define         Function
-hi! link cDefine        Function
-hi! link TypeDef        Function
-hi! link StorageClass   Function
-hi! link Directory      Function
-hi! link Structure      Function
+hi Cursor      guibg=#cc4455  guifg=white     ctermbg=4 ctermfg=15
+hi link CursorIM Cursor
+hi Normal      guibg=#222222  guifg=#eeeeee    gui=none ctermbg=0 ctermfg=15
+hi NonText     guibg=bg  guifg=#eeeeee   ctermbg=8 ctermfg=14
+hi Visual      guibg=#557799  guifg=white    gui=none ctermbg=9 ctermfg=15
 
-" Keyword colors (yellow)
-hi Keyword guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=186 ctermbg=NONE cterm=bold
-hi! link Conditional    Keyword
-hi! link Statement      Keyword
-hi! link Operator       Keyword
+hi Linenr      guibg=bg       guifg=#aaaaaa  gui=none ctermbg=bg ctermfg=7
 
-" Type colors (blue)
-hi Type guifg=#008787 guibg=NONE guisp=NONE gui=bold ctermfg=141 ctermbg=NONE cterm=bold
-hi! link Identifier     Type
-hi! link MakeTarget     Type
+hi Directory   guibg=bg       guifg=#337700  gui=none ctermbg=bg ctermfg=10
 
-" Number colors (green)
-hi Number guifg=#5f8700 guibg=NONE guisp=NONE gui=NONE ctermfg=148 ctermbg=NONE cterm=NONE
-hi Float guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=31 ctermbg=NONE cterm=NONE
-hi! link Boolean        Number
-hi! link Constant       Number
-hi! link Include        Number
-hi! link PreProc        Number
+hi IncSearch   guibg=#0066cc  guifg=white    gui=none ctermbg=1 ctermfg=15
+hi link Seach IncSearch
 
-" String colors (red)
-hi String guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=197 ctermbg=NONE cterm=NONE
-hi! link PreCondit      String
-hi! link Quote          String
+hi SpecialKey  guibg=bg guifg=fg       gui=none ctermbg=bg ctermfg=fg
+hi Titled      guibg=bg guifg=fg       gui=none ctermbg=bg ctermfg=fg
 
-" Delimeter colors (like type but slightly off? Still blue)
-hi Delimiter guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=NONE
-hi! link Delimeter      Delimiter 
+hi ErrorMsg    guibg=bg guifg=#ff0000   ctermbg=bg ctermfg=12
+hi ModeMsg     guibg=bg guifg=#ffeecc  gui=none ctermbg=bg ctermfg=14
+hi link  MoreMsg     ModeMsg
+hi Question    guibg=bg guifg=#9474a9   ctermbg=bg ctermfg=10
+hi link  WarningMsg  ErrorMsg
 
-" Comment colors (whatever)
-hi Comment guifg=#005f87 guibg=NONE guisp=NONE gui=italic ctermfg=241 ctermbg=NONE cterm=NONE
+hi StatusLine     guibg=#ffeecc  guifg=black     ctermbg=14 ctermfg=0
+hi StatusLineNC   guibg=#cc4455  guifg=white    gui=none ctermbg=4  ctermfg=11
+hi VertSplit      guibg=#cc4455  guifg=white    gui=none ctermbg=4  ctermfg=11
 
-" Label colors (orange)
-hi Label guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=208 ctermbg=NONE cterm=bold
-hi! link Character      Label
+hi DiffAdd     guibg=#446688  guifg=fg    gui=none ctermbg=1 ctermfg=fg
+hi DiffChange  guibg=#558855  guifg=fg    gui=none ctermbg=2 ctermfg=fg
+hi DiffDelete  guibg=#884444  guifg=fg    gui=none ctermbg=4 ctermfg=fg
+hi DiffText    guibg=#884444  guifg=fg     ctermbg=4 ctermfg=fg
 
-" Special colors (like function but slightly off? Still purple)
-hi Special guifg=#F9F9FF guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=140 ctermbg=NONE cterm=bold
+" Colors for Syntax Highlighting.
 
-" Error or Unknown colors
-hi Error guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
-hi! link cFormat        Error
-hi! link SpellBad       Error
+hi Comment  guibg=bg  guifg=#444444  gui=none    ctermbg=8   ctermfg=7
 
-" Important colors
-hi Todo guifg=#F9F9FF guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=189 ctermbg=124 cterm=NONE
-hi! link SpellCap       Todo
+hi Constant    guibg=bg    guifg=white        ctermbg=8   ctermfg=15
+hi String      guibg=bg    guifg=#C56C6C    ctermbg=bg  ctermfg=14
+hi Character   guibg=bg    guifg=#04C4A5      ctermbg=bg  ctermfg=14
+hi Number      guibg=bg    guifg=#C56C6C      ctermbg=1   ctermfg=15
+hi Boolean     guibg=bg    guifg=#C56C6C  gui=none    ctermbg=1   ctermfg=15
+hi Float       guibg=bg    guifg=#C56C6C      ctermbg=1   ctermfg=15
 
-" UI colors
-hi LineNr guifg=#d7af00 guibg=NONE guisp=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=bold
-" Orange
-hi MatchParen guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=166 ctermbg=NONE cterm=bold 
-hi Normal guifg=#d0d0d0 guibg=#192224 guisp=#192224 gui=NONE ctermfg=253 ctermbg=233 cterm=NONE
-hi! link Title          Normal
-hi SignColumn ctermfg=237 ctermbg=52
+hi Identifier  guibg=bg    guifg=#eeeeee      ctermbg=bg  ctermfg=12
+hi Function    guibg=bg    guifg=#04C4A5      ctermbg=bg  ctermfg=12
+hi Statement   guibg=bg    guifg=#04C4A5      ctermbg=bg  ctermfg=14
 
-" Diff appendages 
-hi DiffChange ctermbg=52
-hi DiffText ctermbg=88
-hi DiffAdd ctermbg=235
-hi DiffDelete ctermbg=23
+hi Conditional guibg=bg    guifg=#C5906C      ctermbg=bg  ctermfg=12
+hi Repeat      guibg=bg    guifg=#C5906C      ctermbg=4   ctermfg=14
+hi Label       guibg=bg    guifg=#ffccff      ctermbg=bg   ctermfg=13
+hi Operator    guibg=bg    guifg=#C5906C      ctermbg=6   ctermfg=15
+hi Keyword     guibg=bg    guifg=#C5906C      ctermbg=bg  ctermfg=10
+hi Exception   guibg=bg    guifg=#04C4A5      ctermbg=bg  ctermfg=10
 
-" Autocomplete menu
-hi Pmenu ctermbg=233 ctermfg=244
-hi PmenuSel ctermbg=238 ctermfg=250
+hi PreProc    guibg=bg   guifg=#ffcc99   ctermbg=4  ctermfg=14
+hi Include    guibg=bg   guifg=#9474a9   ctermbg=bg ctermfg=10
+hi link Define    Include
+hi link Macro     Include
+hi link PreCondit Include
 
-"--shell--
-hi def link shOperator     String
-hi def link shRange        Function
-hi def link shRedir        Function
-hi def link shDerefVar     Identifier
+hi Type       guibg=bg   guifg=#9474a9      ctermbg=bg  ctermfg=12
+hi StorageClass   guibg=bg   guifg=#04C4A5      ctermbg=bg  ctermfg=10
+hi Structure      guibg=bg   guifg=#eeeeee      ctermbg=bg  ctermfg=10
+hi Typedef    guibg=bg   guifg=#9474a9    ctermbg=bg  ctermfg=10
 
-"--php--
-hi def link phpParent      Delimiter
-hi def link phpVarSelector Type
-hi def link phpFunction    Function
+hi Special    guibg=bg   guifg=#bbddff      ctermbg=1   ctermfg=15
+hi SpecialChar    guibg=bg   guifg=#bbddff      ctermbg=1   ctermfg=15
+hi Tag        guibg=bg   guifg=#bbddff      ctermbg=1   ctermfg=15
+hi Delimiter      guibg=bg   guifg=fg       ctermbg=1   ctermfg=fg
+hi SpecialComment guibg=#334455  guifg=#666666    ctermbg=1   ctermfg=15
+hi Debug      guibg=bg   guifg=#ff9999  gui=none    ctermbg=8   ctermfg=12
 
-"--javascript--
-hi def link jsParens       Delimiter 
-hi def link jsFuncParens   Delimiter 
-hi def link jsBraces       Delimiter
-hi def link jsFuncBraces   Delimiter 
-hi def link jsBrackets     Operator
-hi def link jsFuncCall     Function
-hi def link jsonKeywordMatch     Function
+hi Underlined guibg=bg guifg=#99ccff gui=underline ctermbg=bg ctermfg=9 cterm=underline
 
-"--perl--
-hi def link perlBraces     Delimiter
+hi Title    guibg=bg  guifg=#eeeeee        ctermbg=1   ctermfg=15
+hi Ignore   guibg=bg       guifg=#cccccc    ctermbg=bg  ctermfg=8
+hi Error    guibg=#ff0000  guifg=white        ctermbg=12  ctermfg=15
+hi Todo     guibg=#556677  guifg=#ff0000      ctermbg=1   ctermfg=12
 
-"--C/C++--
-hi def link cBlock         Delimiter
+hi htmlH2 guibg=bg guifg=fg  ctermbg=8 ctermfg=fg
+hi link htmlH3 htmlH2
+hi link htmlH4 htmlH3
+hi link htmlH5 htmlH4
+hi link htmlH6 htmlH5
+
+" And finally.
+
+let g:colors_name = "Pastel"
+let colors_name   = "Pastel"
 
