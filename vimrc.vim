@@ -15,7 +15,15 @@ set number
 set visualbell
 "set mouse=a         "Uncomment this if you want mouse support
 syntax on
-colorscheme vimbrant
+colorscheme hickop
+" briofita, haloo_calm, brogrammer, bvemu, cloudhead, coffee
+" colorful256, colorsbox-faff, dante, darkglass, desert, desertEx,
+" despacio, diablo3, diokai, dracula, dull(?), elise(?), faded-black,
+" firewatch, golded, google(?), graywh(?), grimmjow (light), gruvbox
+" hickop, hybrid(?), inkpot, ir_black, janah, last256, lettuce(?),
+" libertine, luna-term, maroloccio, midnight
+
+" best: hickop, briofita
 
 "Some filetypes are actually other types, but aren't recognized as such
 au BufNewFile,BufRead *.cu set ft=c
