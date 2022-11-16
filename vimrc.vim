@@ -15,7 +15,7 @@ set number
 set visualbell
 "set mouse=a         "Uncomment this if you want mouse support
 syntax on
-colorscheme hickop
+colorscheme haloo_new1
 " briofita, haloo_calm, brogrammer, bvemu, cloudhead, coffee
 " colorful256, colorsbox-faff, dante, darkglass, desert, desertEx,
 " despacio, diablo3, diokai, dracula, dull(?), elise(?), faded-black,
