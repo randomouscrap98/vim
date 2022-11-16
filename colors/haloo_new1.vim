@@ -76,7 +76,7 @@ hi! link SpellCap       Todo
 hi LineNr ctermfg=237 ctermbg=NONE cterm=bold
 " Orange
 hi MatchParen ctermfg=166 ctermbg=NONE cterm=bold 
-hi Normal ctermfg=250 ctermbg=235 cterm=NONE
+hi Normal ctermfg=252 ctermbg=235 cterm=NONE
 hi! link Title          Normal
 hi SignColumn ctermfg=237 ctermbg=52
 
