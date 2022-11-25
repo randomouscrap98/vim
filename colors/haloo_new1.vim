@@ -20,7 +20,7 @@ hi! link StorageClass   Function
 hi! link Directory      Function
 hi! link Structure      Function
 
-" Keyword colors (yellow)
+" Keyword colors (yellow) (no, green)
 hi Keyword ctermfg=35 ctermbg=NONE cterm=bold
 hi! link Conditional    Keyword
 hi! link Statement      Keyword
@@ -31,7 +31,7 @@ hi Type ctermfg=38 ctermbg=NONE cterm=bold
 hi! link Identifier     Type
 hi! link MakeTarget     Type
 
-" Number colors (green)
+" Number colors (green) (no, pink)
 hi Number ctermfg=176 ctermbg=NONE cterm=NONE
 " hi Number ctermfg=71 ctermbg=NONE cterm=NONE
 " hi Float ctermfg=74 ctermbg=NONE cterm=NONE
@@ -49,6 +49,7 @@ hi! link Quote          String
 
 " Delimeter colors (like type but slightly off? Still blue)
 hi Delimiter ctermfg=36 ctermbg=NONE cterm=NONE
+" hi Delimiter ctermfg=51 ctermbg=NONE cterm=NONE
 hi! link Delimeter      Delimiter 
 
 " Comment colors (whatever)
@@ -102,14 +103,15 @@ hi def link phpVarSelector Type
 hi def link phpFunction    Function
 
 "--javascript--
-hi def link jsParens       Delimiter 
-hi def link jsFuncParens   Delimiter 
-hi def link jsBraces       Delimiter
-hi def link jsFuncBraces   Delimiter 
-hi def link jsBrackets     Operator
-hi def link jsFuncCall     Function
+" hi def link jsParens       Delimiter 
+" hi def link jsFuncParens   Delimiter 
+" hi def link jsBraces       Delimiter
+" hi def link jsFuncBraces   Delimiter 
+" hi def link jsBrackets     Operator
+" hi def link jsFuncCall     Function
 hi def link jsonKeywordMatch     Function
 hi def link javaScriptExceptions    Keyword
+" hi def link javaScriptParens  Delimiter
 
 "--perl--
 hi def link perlBraces     Delimiter
@@ -122,6 +124,11 @@ hi def link rustMacro      Special
 hi def link rustModPath    Type
 hi def link rustStorage    Keyword
 hi def link rustSigil      Label
+hi def link rustEscape     Label
+" hi def link rustLifetime   Delimiter
+hi def link rustLifetime   Label
+
+hi def link tomlTable      Function
 " hi def link rustBoxPlacementBalance    Keyword
 " hi rustFoldBraces ctermfg=104 ctermbg=NONE cterm=bold
 " hi rustOperator   Operator
